@@ -583,6 +583,16 @@
               <button class="toggle-btn" onclick="setChartType('violin',this)">🎻 Violino</button>
             </div>
           </div>
+        <div class="ctrl-group">
+        <span class="ctrl-label">Exportar</span>
+        <div class="btn-toggle-group">
+          <button class="toggle-btn export-btn" onclick="exportCurrentPNG()">⬇ PNG</button>
+          <button class="toggle-btn export-btn" onclick="exportAllPNG()">⬇ Todos</button>
+          <button class="toggle-btn export-btn" id="btnGeneratePdf" onclick="generateFullPDF()" style="border-left: 1px solid rgba(139,26,26,0.2); padding-left: 10px; font-weight: 700;">
+            📄 PDF
+          </button>
+         </div>
+        </div>
           <div class="ctrl-group">
             <span class="ctrl-label">Layout</span>
             <div class="btn-toggle-group" id="layoutGroup">
