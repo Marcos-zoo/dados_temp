@@ -55,7 +55,17 @@ function refreshCharts() {
   if (chartLayout === 'single') {
     grid.className = 'charts-grid single-mode';
     nav.style.display = 'flex';
-    document.getElementById('navInfo').textContent = (currentIdx+1) + ' / ' + chartVars.length + ' — ' + chartVars[currentIdx];
+    
+    // ── CRIAÇÃO DO MENU SUSPENSO (DROPDOWN) ──
+    let optionsHtml = chartVars.map((v, i) => 
+      `<option value="${i}" ${i === currentIdx ? 'selected' : ''}>${i + 1} / ${chartVars.length} — ${v}</option>`
+    ).join('');
+
+    document.getElementById('navInfo').innerHTML = `
+      <select onchange="jumpToChart(this.value)" style="padding: 6px 12px; border-radius: 6px; border: 1.5px solid rgba(139,26,26,0.2); font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--rust); background: #fdf9f5; cursor: pointer; outline: none; min-width: 200px; text-align: center;">
+        ${optionsHtml}
+      </select>
+    `;
   } else {
     grid.className = 'charts-grid';
     nav.style.display = 'none';
@@ -139,24 +149,29 @@ function buildTreatmentTraces(varName, trKey, perKey, treatments, periods) {
       ns.push(st.n);
     });
 
-    const color  = COLORS[pIdx % COLORS.length];
+    const traceColor  = COLORS[pIdx % COLORS.length];
     const sName  = perKey ? 'Período ' + per : varName;
     const hoverT = xLabels.map((x,i) => `Trat: ${x}<br>Média: ${means[i]!==null?means[i].toFixed(4):'NA'}<br>${errorType==='sd'?'DP':'EP'}: ${errors[i]!==null?errors[i].toFixed(4):'NA'}<br>n: ${ns[i]}`);
+
+    // ── LÓGICA DE CORES DA BARRA ──
+    // Se não tiver período, pinta cada barra de uma cor diferente. Se tiver, agrupa por cor.
+    const barColor = perKey ? traceColor : treatments.map((_, i) => COLORS[i % COLORS.length]);
+    const errColor = perKey ? traceColor : '#4A2A1A'; // Cor do erro fica neutra se as barras forem multicores
 
     if (chartType === 'bar') {
       traces.push({
         type: 'bar', name: sName, x: xLabels, y: means,
-        error_y: { type:'data', array: errors, visible:true, color: color, thickness:2, width:8 },
-        marker: { color: color, opacity: 0.88, line:{color:'rgba(0,0,0,0.15)',width:1} },
+        error_y: { type:'data', array: errors, visible:true, color: errColor, thickness:2, width:8 },
+        marker: { color: barColor, opacity: 0.88, line:{color:'rgba(0,0,0,0.15)',width:1} },
         hovertext: hoverT, hoverinfo: 'text',
-        hoverlabel: { bgcolor: '#fff', bordercolor: color, font:{color:'#2A1005'} }
+        hoverlabel: { bgcolor: '#fff', bordercolor: traceColor, font:{color:'#2A1005'} }
       });
     } else {
       traces.push({
         type: 'scatter', mode: 'lines+markers', name: sName, x: xLabels, y: means,
-        error_y: { type:'data', array: errors, visible:true, color: color, thickness:2, width:8 },
-        line: { color: color, width:2.5 },
-        marker: { color: color, size:9, symbol:'circle', line:{color:'#fff',width:1.5} },
+        error_y: { type:'data', array: errors, visible:true, color: traceColor, thickness:2, width:8 },
+        line: { color: traceColor, width:2.5 },
+        marker: { color: traceColor, size:9, symbol:'circle', line:{color:'#fff',width:1.5} },
         hovertext: hoverT, hoverinfo: 'text'
       });
     }
@@ -193,7 +208,6 @@ function buildPeriodTraces(varName, trKey, perKey, treatments, periods) {
   return traces;
 }
 
-// Essa função agora constrói tanto o Boxplot quanto o Violino
 function buildDistributionTraces(varName, trKey, perKey, treatments, periods, type) {
   const traces = [];
   const seriesList = perKey ? periods : [null];
@@ -216,7 +230,7 @@ function buildDistributionTraces(varName, trKey, perKey, treatments, periods, ty
 
       if (type === 'violin') {
         traceObj.type = 'violin';
-        traceObj.box = { visible: true }; // Mostra um mini-boxplot dentro do violino
+        traceObj.box = { visible: true }; 
         traceObj.meanline = { visible: true };
         traceObj.points = 'all';
         traceObj.jitter = 0.3;
@@ -282,6 +296,12 @@ window.setPerMode = (mode, btn) => {
   perMode = mode;
   document.querySelectorAll('#perModeButtons .toggle-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  refreshCharts();
+};
+
+// ── NOVA FUNÇÃO: Pular direto para o gráfico escolhido no Dropdown
+window.jumpToChart = (idx) => {
+  currentIdx = parseInt(idx, 10);
   refreshCharts();
 };
 
