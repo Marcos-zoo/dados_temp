@@ -1,0 +1,179 @@
+<div class="home-body">
+  <div class="instructions-box">
+    <div class="instr-header">
+      <span>📋</span>
+      <h3>Como usar o DataAves</h3>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Prepare sua planilha Excel seguindo os padrões GEAVES</h4>
+          <p>Organize os dados no formato padrão descrito abaixo. A primeira linha deve conter os cabeçalhos (siglas das variáveis). Cada linha subsequente representa uma repetição. Variáveis de categorias diferentes devem estar em abas separadas do mesmo arquivo.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Acesse a aba "Dados" e faça o upload</h4>
+          <p>Clique em "Dados" no menu superior. Arraste o arquivo .xlsx ou clique para selecioná-lo. Escolha qual aba (sheet) deseja verificar — o sistema lista automaticamente todas as abas do arquivo.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Confira a estatística descritiva</h4>
+          <p>Após a validação bem-sucedida, acesse a aba "Estatística" para visualizar a distribuição e resumo de cada variável por tratamento e fase experimental.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>Explore os gráficos</h4>
+          <p>Acesse a aba "Gráficos" para visualizar seus dados em gráficos de linhas, barras e boxplot. O layout é gerado automaticamente com base no número de variáveis detectadas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="format-section">
+    <p class="section-label">Padrões obrigatórios </p>
+    <h2 class="section-title">Regras de organização de dados — GEAVES</h2>
+    <p class="section-lead">
+      Estas regras foram estabelecidas para garantir padronização das tabelas. 
+      O DataAves verifica automaticamente cada uma delas ao carregar sua planilha.
+    </p>
+
+    <div class="rules-grid">
+      <div class="rule-card">
+        <div class="rule-icon">📊</div>
+        <div class="rule-body">
+          <h4>Use apenas médias das repetições por fase</h4>
+          <p>Coloque a média de cada repetição para cada fase experimental, <strong>não os dados brutos individuais</strong>. Os dados brutos devem estar em arquivo separado e ser enviados ao professor responsável.</p>
+          <div class="rule-example">
+            <span class="ex-label">✔ Correto</span> TR=1 · REP=1 · Fase1: BWG=44 · FC=1.477
+          </div>
+        </div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">🏷️</div>
+        <div class="rule-body">
+          <h4>Siglas em inglês, sem símbolos</h4>
+          <p>Todos os cabeçalhos devem ser siglas em inglês. <strong>Nunca use símbolos</strong> como %, $, *, ° nos títulos das colunas.</p>
+          <div class="rule-example">
+            <span class="ex-label ex-bad">✘</span> Albumen% &nbsp;|&nbsp;
+            <span class="ex-label">✔</span> alb_p
+          </div>
+        </div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">🔡</div>
+        <div class="rule-body">
+          <h4>Sem espaços, acentos ou palavras completas</h4>
+          <p>Use sempre siglas curtas sem acento e sem espaço. Underline <code>_</code> é permitido para separar partes da sigla.</p>
+          <div class="rule-example">
+            <span class="ex-label ex-bad">✘</span> Percentagem de álbum &nbsp;|&nbsp;
+            <span class="ex-label">✔</span> alb_p
+          </div>
+        </div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">🚫</div>
+        <div class="rule-body">
+          <h4>Sem siglas repetidas</h4>
+          <p>Cada variável deve ter uma sigla única no arquivo. Siglas duplicadas causam ambiguidade na análise.</p>
+          <div class="rule-example">
+            <span class="ex-label ex-bad">✘</span> BWG, BWG &nbsp;|&nbsp;
+            <span class="ex-label">✔</span> bwg1, bwg2
+          </div>
+        </div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">🔲</div>
+        <div class="rule-body">
+          <h4>Use NA para parcelas perdidas</h4>
+          <p>Quando uma observação não puder ser registrada, <strong>escreva NA</strong>. Nunca deixe a célula em branco.</p>
+          <div class="rule-example">
+            <span class="ex-label ex-bad">✘</span> célula vazia &nbsp;|&nbsp;
+            <span class="ex-label">✔</span> NA
+          </div>
+        </div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">📑</div>
+        <div class="rule-body">
+          <h4>Variáveis por categoria em abas separadas</h4>
+          <p>Separe variáveis por categoria em abas (sheets) diferentes no mesmo .xlsx. Nome da aba: curto, minúsculas, sem acento.</p>
+          <div class="rule-example">
+            <span class="ex-label ex-bad">✘</span> "Desempenho Produtivo" &nbsp;|&nbsp;
+            <span class="ex-label">✔</span> desempenho · qualidade · bioquimico
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="format-section">
+    <p class="section-label">Estrutura da planilha</p>
+    <h2 class="section-title">Colunas obrigatórias e variáveis de resposta</h2>
+    <p class="section-lead">
+      As três primeiras colunas são identificadoras obrigatórias; as demais são
+      as variáveis de resposta mensuradas em cada unidade experimental.
+    </p>
+
+    <div class="format-table-wrap" style="margin-bottom:28px;">
+      <table>
+        <thead>
+          <tr><th>Coluna</th><th>Obrigatoriedade</th><th>Tipo</th><th>Descrição / Exemplo</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>TR</strong></td>
+            <td><span class="tag tag-req">Obrigatória</span></td>
+            <td><span class="tag tag-cat">Categórico</span></td>
+            <td>Tratamento — número ou código do grupo experimental (1, 2, 3…)</td>
+          </tr>
+          <tr>
+            <td><strong>REP</strong></td>
+            <td><span class="tag tag-req">Obrigatória</span></td>
+            <td><span class="tag tag-num">Numérico</span></td>
+            <td>Repetição — número da baia, gaiola ou boxe (1, 2, 3…)</td>
+          </tr>
+          <tr>
+            <td><strong>PER</strong></td>
+            <td><span class="tag tag-opt">Opcional</span></td>
+            <td><span class="tag tag-num">Numérico</span></td>
+            <td>Período/fase experimental. Obrigatória quando há mais de uma fase.</td>
+          </tr>
+          <tr>
+            <td><em>VAR_1 … VAR_N</em></td>
+            <td><span class="tag tag-req">Obrigatória</span></td>
+            <td><span class="tag tag-num">Numérico</span></td>
+            <td>Variáveis de resposta em siglas inglesas. Ex.: BWG, FI, FC, EW, EO, alb_p…</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="section-label">Exemplo real de planilha aceita</p>
+    <div class="format-table-wrap">
+      <table>
+        <thead>
+          <tr><th>TR</th><th>REP</th><th>PER</th><th>BWG</th><th>FI</th><th>FC</th><th>EW</th><th>EO</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>1</td><td>1</td><td>44</td><td>65</td><td>1.477</td><td>65</td><td>95</td></tr>
+          <tr><td>1</td><td>2</td><td>1</td><td>41</td><td>63</td><td>1.537</td><td>63</td><td>95</td></tr>
+          <tr><td>2</td><td>1</td><td>1</td><td>45</td><td>64</td><td>1.422</td><td>62</td><td class="cell-na">NA</td></tr>
+          <tr><td>2</td><td>2</td><td>1</td><td>45</td><td>62</td><td>1.378</td><td>61</td><td>95</td></tr>
+          <tr><td>3</td><td>1</td><td>1</td><td>45</td><td>63</td><td>1.400</td><td>65</td><td>95</td></tr>
+          <tr><td>3</td><td>6</td><td>1</td><td>43</td><td>68</td><td>1.581</td><td>63</td><td>93</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.8rem;color:var(--mid);margin-top:10px;">
+      ⚠️ Parcela perdida (TR=2, REP=1, EO) preenchida com <strong>NA</strong>.
+      Cada aba do arquivo representa uma categoria de variáveis.
+    </p>
+  </div>
+</div>

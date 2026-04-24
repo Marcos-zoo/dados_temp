@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataAves – GEAVES/UFRPE</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <img src="logo.png" alt="GEAVES Logo" />
+      <div class="nav-logo-text">
+        <div class="brand">DataAves</div>
+        <div class="sub">GEAVES · UFRPE</div>
+      </div>
+    </div>
+    <div class="nav-divider"></div>
+
+    <button class="tab-btn active" onclick="switchTab('home', this)">
+      <span class="icon">🏠</span> Início
+    </button>
+    <button class="tab-btn" onclick="switchTab('instructions', this)">
+      <span class="icon">📖</span> Instruções
+    </button>
+    <button class="tab-btn" onclick="switchTab('upload', this)">
+      <span class="icon">📂</span> Dados
+    </button>
+    <button class="tab-btn" onclick="switchTab('descriptive', this)">
+      <span class="icon">📐</span> Estatística
+    </button>
+    <button class="tab-btn" onclick="switchTab('charts', this)">
+      <span class="icon">📈</span> Gráficos
+    </button>
+  </nav>
+
+  <main>
+
+    <div id="tab-home" class="tab-panel active">
+
+      <section class="home-hero">
+        <img src="logo.png" alt="GEAVES" class="hero-logo" />
+        <p class="hero-subtitle">GEAVES · UFRPE</p>
+        <h1 class="hero-title"><span>DataAves</span></h1>
+        <p class="hero-desc">
+          Plataforma de verificação preliminar e análise exploratória de dados
+          experimentais em avicultura. Desenvolvido pelo Dr. Marcos Santos.
+        </p>
+        <button class="hero-btn" onclick="switchTab('upload', document.querySelectorAll('.tab-btn')[2])">
+          ⚡ Começar agora
+        </button>
+      </section>
+
+      <div class="home-body">
+
+        <p class="section-label">Sobre a plataforma</p>
+        <h2 class="section-title">O que é o DataAves?</h2>
+        <p class="section-lead">
+          O DataAves é uma ferramenta <strong>100% web</strong> desenvolvida para auxiliar
+          pesquisadores e estudantes de pós-graduação na inspeção rápida de planilhas
+          experimentais antes da análise estatística formal. 
+        </p>
+
+        <div class="cards-grid">
+          <div class="card">
+            <span class="card-icon">🔍</span>
+            <h3 class="card-title">Verificação de formato</h3>
+            <p class="card-text">Detecta automaticamente colunas obrigatórias, tipos de dados incorretos, células em branco e inconsistências de codificação nos seus dados experimentais.</p>
+          </div>
+          <div class="card">
+            <span class="card-icon">📐</span>
+            <h3 class="card-title">Estatística descritiva</h3>
+            <p class="card-text">Gera média, mediana, desvio-padrão, CV%, mínimo e máximo por variável e por tratamento — na mesma tela, sem copiar e colar.</p>
+          </div>
+          <div class="card">
+            <span class="card-icon">📊</span>
+            <h3 class="card-title">Gráficos automáticos</h3>
+            <p class="card-text">Detecta o número de variáveis e organiza o layout dos gráficos (linhas, barras e boxplot) automaticamente.</p>
+          </div>
+          <div class="card">
+            <span class="card-icon">🔒</span>
+            <h3 class="card-title">Uso</h3>
+            <p class="card-text">Desenvolvida originalmente para o GEAVES, esta plataforma é aberta a todos os alunos que desejam explorar e analisar seus dados.</p>
+          </div>
+        </div>
+
+      </div></div><div id="tab-instructions" class="tab-panel">
+      <div class="home-body">
+        
+        <div class="instructions-box">
+          <div class="instr-header">
+            <span>📋</span>
+            <h3>Como usar o DataAves</h3>
+          </div>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <h4>Prepare sua planilha Excel seguindo os padrões GEAVES</h4>
+                <p>Organize os dados no formato padrão descrito abaixo. A primeira linha deve conter os cabeçalhos (siglas das variáveis). Cada linha subsequente representa uma repetição. Variáveis de categorias diferentes devem estar em abas separadas do mesmo arquivo.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <h4>Acesse a aba "Dados" e faça o upload</h4>
+                <p>Clique em "Dados" no menu superior. Arraste o arquivo .xlsx ou clique para selecioná-lo. Escolha qual aba (sheet) deseja verificar — o sistema lista automaticamente todas as abas do arquivo.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <h4>Confira a estatística descritiva</h4>
+                <p>Após a validação bem-sucedida, acesse a aba "Estatística" para visualizar a distribuição e resumo de cada variável por tratamento e fase experimental.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-content">
+                <h4>Explore os gráficos</h4>
+                <p>Acesse a aba "Gráficos" para visualizar seus dados em gráficos de linhas, barras e boxplot. O layout é gerado automaticamente com base no número de variáveis detectadas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="format-section">
+          <p class="section-label">Padrões obrigatórios </p>
+          <h2 class="section-title">Regras de organização de dados — GEAVES</h2>
+          <p class="section-lead">
+            Estas regras foram estabelecidas para garantir padronização das tabelas. 
+            O DataAves verifica automaticamente cada uma delas ao carregar sua planilha.
+          </p>
+
+          <div class="rules-grid">
+            <div class="rule-card">
+              <div class="rule-icon">📊</div>
+              <div class="rule-body">
+                <h4>Use apenas médias das repetições por fase</h4>
+                <p>Coloque a média de cada repetição para cada fase experimental, <strong>não os dados brutos individuais</strong>. Os dados brutos devem estar em arquivo separado e ser enviados ao professor responsável.</p>
+                <div class="rule-example">
+                  <span class="ex-label">✔ Correto</span> TR=1 · REP=1 · Fase1: BWG=44 · FC=1.477
+                </div>
+              </div>
+            </div>
+            <div class="rule-card">
+              <div class="rule-icon">🏷️</div>
+              <div class="rule-body">
+                <h4>Siglas em inglês, sem símbolos</h4>
+                <p>Todos os cabeçalhos devem ser siglas em inglês. <strong>Nunca use símbolos</strong> como %, $, *, ° nos títulos das colunas.</p>
+                <div class="rule-example">
+                  <span class="ex-label ex-bad">✘</span> Albumen% &nbsp;|&nbsp;
+                  <span class="ex-label">✔</span> alb_p
+                </div>
+              </div>
+            </div>
+            <div class="rule-card">
+              <div class="rule-icon">🔡</div>
+              <div class="rule-body">
+                <h4>Sem espaços, acentos ou palavras completas</h4>
+                <p>Use sempre siglas curtas sem acento e sem espaço. Underline <code>_</code> é permitido para separar partes da sigla.</p>
+                <div class="rule-example">
+                  <span class="ex-label ex-bad">✘</span> Percentagem de álbum &nbsp;|&nbsp;
+                  <span class="ex-label">✔</span> alb_p
+                </div>
+              </div>
+            </div>
+            <div class="rule-card">
+              <div class="rule-icon">🚫</div>
+              <div class="rule-body">
+                <h4>Sem siglas repetidas</h4>
+                <p>Cada variável deve ter uma sigla única no arquivo. Siglas duplicadas causam ambiguidade na análise.</p>
+                <div class="rule-example">
+                  <span class="ex-label ex-bad">✘</span> BWG, BWG &nbsp;|&nbsp;
+                  <span class="ex-label">✔</span> bwg1, bwg2
+                </div>
+              </div>
+            </div>
+            <div class="rule-card">
+              <div class="rule-icon">🔲</div>
+              <div class="rule-body">
+                <h4>Use NA para parcelas perdidas</h4>
+                <p>Quando uma observação não puder ser registrada, <strong>escreva NA</strong>. Nunca deixe a célula em branco.</p>
+                <div class="rule-example">
+                  <span class="ex-label ex-bad">✘</span> célula vazia &nbsp;|&nbsp;
+                  <span class="ex-label">✔</span> NA
+                </div>
+              </div>
+            </div>
+            <div class="rule-card">
+              <div class="rule-icon">📑</div>
+              <div class="rule-body">
+                <h4>Variáveis por categoria em abas separadas</h4>
+                <p>Separe variáveis por categoria em abas (sheets) diferentes no mesmo .xlsx. Nome da aba: curto, minúsculas, sem acento.</p>
+                <div class="rule-example">
+                  <span class="ex-label ex-bad">✘</span> "Desempenho Produtivo" &nbsp;|&nbsp;
+                  <span class="ex-label">✔</span> desempenho · qualidade · bioquimico
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="format-section">
+          <p class="section-label">Estrutura da planilha</p>
+          <h2 class="section-title">Colunas obrigatórias e variáveis de resposta</h2>
+          <p class="section-lead">
+            As três primeiras colunas são identificadoras obrigatórias; as demais são
+            as variáveis de resposta mensuradas em cada unidade experimental.
+          </p>
+
+          <div class="format-table-wrap" style="margin-bottom:28px;">
+            <table>
+              <thead>
+                <tr><th>Coluna</th><th>Obrigatoriedade</th><th>Tipo</th><th>Descrição / Exemplo</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>TR</strong></td>
+                  <td><span class="tag tag-req">Obrigatória</span></td>
+                  <td><span class="tag tag-cat">Categórico</span></td>
+                  <td>Tratamento — número ou código do grupo experimental (1, 2, 3…)</td>
+                </tr>
+                <tr>
+                  <td><strong>REP</strong></td>
+                  <td><span class="tag tag-req">Obrigatória</span></td>
+                  <td><span class="tag tag-num">Numérico</span></td>
+                  <td>Repetição — número da baia, gaiola ou boxe (1, 2, 3…)</td>
+                </tr>
+                <tr>
+                  <td><strong>PER</strong></td>
+                  <td><span class="tag tag-opt">Opcional</span></td>
+                  <td><span class="tag tag-num">Numérico</span></td>
+                  <td>Período/fase experimental. Obrigatória quando há mais de uma fase.</td>
+                </tr>
+                <tr>
+                  <td><em>VAR_1 … VAR_N</em></td>
+                  <td><span class="tag tag-req">Obrigatória</span></td>
+                  <td><span class="tag tag-num">Numérico</span></td>
+                  <td>Variáveis de resposta em siglas inglesas. Ex.: BWG, FI, FC, EW, EO, alb_p…</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="section-label">Exemplo real de planilha aceita</p>
+          <div class="format-table-wrap">
+            <table>
+              <thead>
+                <tr><th>TR</th><th>REP</th><th>PER</th><th>BWG</th><th>FI</th><th>FC</th><th>EW</th><th>EO</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>1</td><td>1</td><td>44</td><td>65</td><td>1.477</td><td>65</td><td>95</td></tr>
+                <tr><td>1</td><td>2</td><td>1</td><td>41</td><td>63</td><td>1.537</td><td>63</td><td>95</td></tr>
+                <tr><td>2</td><td>1</td><td>1</td><td>45</td><td>64</td><td>1.422</td><td>62</td><td class="cell-na">NA</td></tr>
+                <tr><td>2</td><td>2</td><td>1</td><td>45</td><td>62</td><td>1.378</td><td>61</td><td>95</td></tr>
+                <tr><td>3</td><td>1</td><td>1</td><td>45</td><td>63</td><td>1.400</td><td>65</td><td>95</td></tr>
+                <tr><td>3</td><td>6</td><td>1</td><td>43</td><td>68</td><td>1.581</td><td>63</td><td>93</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:0.8rem;color:var(--mid);margin-top:10px;">
+            ⚠️ Parcela perdida (TR=2, REP=1, EO) preenchida com <strong>NA</strong>.
+            Cada aba do arquivo representa uma categoria de variáveis.
+          </p>
+        </div>
+
+      </div>
+    </div><div id="tab-upload" class="tab-panel">
+      <div class="upload-page">
+
+        <div class="upload-sidebar">
+
+          <div class="sidebar-section">
+            <p class="section-label">Passo 1</p>
+            <h3 class="sidebar-title">Selecione o arquivo</h3>
+            <div class="dropzone" id="dropzone">
+              <div class="dz-icon">📁</div>
+              <p class="dz-main">Arraste o arquivo .xlsx aqui</p>
+              <p class="dz-sub">ou clique para selecionar</p>
+              <input type="file" id="fileInput" accept=".xlsx,.xls" hidden />
+            </div>
+            <div id="fileInfo" class="file-info hidden"></div>
+          </div>
+
+          <div class="sidebar-section" id="sheetSection" style="display:none;">
+            <p class="section-label">Passo 2</p>
+            <h3 class="sidebar-title">Selecione a aba (sheet)</h3>
+            <p class="sidebar-hint">
+              Seu arquivo possui <strong id="sheetCount">—</strong> aba(s). Escolha qual deseja verificar:
+            </p>
+            <div id="sheetButtons" class="sheet-btn-group"></div>
+            <p class="sidebar-note">
+              💡 Verifique uma aba por vez. Abas diferentes representam categorias
+              diferentes de variáveis (desempenho, qualidade, bioquimico…).
+            </p>
+          </div>
+
+          <div class="sidebar-section" id="decimalSection" style="display:none;">
+            <p class="section-label">Passo 3</p>
+            <h3 class="sidebar-title">Separador decimal detectado</h3>
+            <div id="decimalInfo" class="decimal-badge"></div>
+            <p class="sidebar-note">
+              O sistema converte vírgulas em pontos automaticamente antes da validação.
+              Nenhuma alteração é feita no arquivo original.
+            </p>
+          </div>
+
+          <button id="btnValidate" class="btn-validate hidden" onclick="runValidationAndRender()">
+            🔍 Verificar dados
+          </button>
+
+          <button id="btnReset" class="btn-reset hidden" onclick="resetUpload()">
+            ↺ Carregar outro arquivo
+          </button>
+
+        </div><div class="upload-results">
+
+          <div class="results-empty" id="resultsEmpty">
+            <span style="font-size:3.5rem;">🧐</span>
+            <p>O relatório de verificação aparecerá aqui após o upload.</p>
+          </div>
+
+          <div id="resultsContent" style="display:none;">
+
+            <div id="summaryBanner" class="summary-banner"></div>
+
+            <div class="result-block">
+              <h4 class="result-block-title">
+                📋 Preview dos dados
+                <span id="previewSheetName" class="badge-sheet"></span>
+              </h4>
+              <p class="result-block-sub" id="previewDimensions"></p>
+              <div class="preview-table-wrap" id="previewTableWrap"></div>
+            </div>
+
+            <div class="result-block">
+              <h4 class="result-block-title">✅ Verificação das regras GEAVES</h4>
+              <div id="checklistItems" class="checklist"></div>
+            </div>
+
+            <div id="errorDetails" class="result-block" style="display:none;">
+              <h4 class="result-block-title">⚠️ Detalhes dos problemas encontrados</h4>
+              <div id="errorList" class="error-list"></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div><div id="tab-descriptive" class="tab-panel">
+      <div class="desc-page">
+
+        <div id="descBanner" class="desc-banner" style="display:none;"></div>
+
+        <div class="cv-legend" id="cvLegend" style="display:none;">
+          <span class="cv-legend-title">CV (Gomes, 1990):</span>
+          <span class="cv-badge cv-low">     &lt; 10% — Baixo</span>
+          <span class="cv-badge cv-medium">  10–20% — Médio</span>
+          <span class="cv-badge cv-high">    20–30% — Alto</span>
+          <span class="cv-badge cv-veryhigh">&gt; 30% — Muito alto</span>
+        </div>
+
+        <div class="desc-empty" id="descEmpty">
+          <span class="big-icon">📐</span>
+          <h2>Nenhum dado carregado</h2>
+          <p>Carregue e valide sua planilha na aba <strong>Dados</strong> para que a
+             estatística descritiva seja calculada automaticamente aqui.</p>
+          <button class="btn-go" onclick="switchTab('upload', document.querySelectorAll('.tab-btn')[2])">
+            📂 Ir para Dados
+          </button>
+        </div>
+
+        <div id="descContent" style="display:none;"></div>
+
+      </div>
+    </div>
+
+    <div id="tab-charts" class="tab-panel">
+
+      <div class="charts-empty" id="chartsEmpty">
+        <span class="big-icon">📈</span>
+        <h2>Nenhum dado carregado</h2>
+        <p>Carregue e valide sua planilha na aba <strong>Dados</strong> primeiro.</p>
+        <button class="btn-go" onclick="switchTab('upload', document.querySelectorAll('.tab-btn')[2])">
+          📂 Ir para Dados
+        </button>
+      </div>
+
+      <div id="chartsMain" style="display:none;">
+
+        <div class="charts-toolbar">
+          <div class="ctrl-group">
+            <span class="ctrl-label">Tipo</span>
+            <div class="btn-toggle-group" id="chartTypeGroup">
+              <button class="toggle-btn active" onclick="setChartType('bar',this)">▊ Barras</button>
+              <button class="toggle-btn" onclick="setChartType('line',this)">↗ Linhas</button>
+              <button class="toggle-btn" onclick="setChartType('box',this)">▭ Boxplot</button>
+              <button class="toggle-btn" onclick="setChartType('violin',this)">🎻 Violino</button>
+            </div>
+          </div>
+
+          <div class="ctrl-group">
+            <span class="ctrl-label">Layout</span>
+            <div class="btn-toggle-group" id="layoutGroup">
+              <button class="toggle-btn active" onclick="setLayout('grid',this)">⊞ Grade</button>
+              <button class="toggle-btn" onclick="setLayout('single',this)">⬜ Individual</button>
+            </div>
+          </div>
+
+          <div class="ctrl-group" id="errorBarGroup">
+            <span class="ctrl-label">Erro</span>
+            <div class="btn-toggle-group" id="errorTypeGroup">
+              <button class="toggle-btn active" onclick="setErrorType('sd',this)">DP</button>
+              <button class="toggle-btn" onclick="setErrorType('se',this)">EP</button>
+            </div>
+          </div>
+
+          <div class="ctrl-group" id="perModeGroup" style="display:none;">
+            <span class="ctrl-label">Eixo X</span>
+            <div class="btn-toggle-group" id="perModeButtons">
+              <button class="toggle-btn active" onclick="setPerMode('treatments',this)">Tratamentos</button>
+              <button class="toggle-btn" onclick="setPerMode('periods',this)">Períodos</button>
+            </div>
+          </div>
+
+          <div class="ctrl-sep"></div>
+
+          <div class="ctrl-group">
+            <span class="ctrl-label">Eixo Y Global</span>
+            <div class="axis-inputs">
+              <input type="number" id="yMin" placeholder="Mín" class="axis-input" oninput="propagateGlobalY()">
+              <span class="axis-sep">–</span>
+              <input type="number" id="yMax" placeholder="Máx" class="axis-input" oninput="propagateGlobalY()">
+            </div>
+          </div>
+
+          <div class="ctrl-sep"></div>
+
+          <div class="ctrl-group">
+            <span class="ctrl-label">Exportar</span>
+            <div class="btn-toggle-group">
+              <button class="toggle-btn export-btn" onclick="exportCurrentPNG()">⬇ PNG</button>
+              <button class="toggle-btn export-btn" onclick="exportAllPNG()">⬇ Todos</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="charts-nav" id="chartsNav" style="display:none;">
+          <button class="nav-btn" onclick="navigateChart(-1)">← Anterior</button>
+          <span class="nav-info" id="navInfo"></span>
+          <button class="nav-btn" onclick="navigateChart(1)">Próximo →</button>
+        </div>
+
+        <div class="charts-grid" id="chartsGrid"></div>
+
+      </div>
+    </div></main>
+
+  <footer>
+    <strong>DataAves</strong> · GEAVES – Grupo de Estudos em Avicultura  ·
+    Universidade Federal Rural de Pernambuco (UFRPE) ·
+    Desenvolvido para uso acadêmico e de pesquisa.
+    <div style="margin-top: 5px;">Dr. Marcos Santos</div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  
+  <script type="module" src="assets/js/app.js"></script>
+
+</body>
+</html>
