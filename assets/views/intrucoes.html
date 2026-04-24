@@ -1,4 +1,5 @@
 <div class="home-body">
+  
   <div class="instructions-box">
     <div class="instr-header">
       <span>📋</span>
@@ -154,26 +155,128 @@
         </tbody>
       </table>
     </div>
+  </div>
 
-    <p class="section-label">Exemplo real de planilha aceita</p>
+  <div class="format-section" style="margin-top: 48px;">
+    <p class="section-label">Padronização GEAVES</p>
+    <h2 class="section-title">Dicionário de Siglas Oficiais</h2>
+    <p class="section-lead">
+      Utilize <strong>exatamente</strong> as siglas abaixo nos cabeçalhos das suas colunas no Excel. Elas seguem o padrão internacional de publicações científicas em avicultura.
+    </p>
+
+    <h3 style="color: var(--rust); margin: 32px 0 12px; font-family: 'Playfair Display', serif;">Performance (Desempenho)</h3>
     <div class="format-table-wrap">
       <table>
         <thead>
-          <tr><th>TR</th><th>REP</th><th>PER</th><th>BWG</th><th>FI</th><th>FC</th><th>EW</th><th>EO</th></tr>
+          <tr><th>Termo em Inglês</th><th>Termo em Português</th><th>Sigla Recomendada</th></tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>1</td><td>1</td><td>44</td><td>65</td><td>1.477</td><td>65</td><td>95</td></tr>
-          <tr><td>1</td><td>2</td><td>1</td><td>41</td><td>63</td><td>1.537</td><td>63</td><td>95</td></tr>
-          <tr><td>2</td><td>1</td><td>1</td><td>45</td><td>64</td><td>1.422</td><td>62</td><td class="cell-na">NA</td></tr>
-          <tr><td>2</td><td>2</td><td>1</td><td>45</td><td>62</td><td>1.378</td><td>61</td><td>95</td></tr>
-          <tr><td>3</td><td>1</td><td>1</td><td>45</td><td>63</td><td>1.400</td><td>65</td><td>95</td></tr>
-          <tr><td>3</td><td>6</td><td>1</td><td>43</td><td>68</td><td>1.581</td><td>63</td><td>93</td></tr>
+          <tr><td>Body weight</td><td>Peso corporal</td><td><span class="tag tag-num">BW</span></td></tr>
+          <tr><td>Body weight gain</td><td>Ganho de peso corporal</td><td><span class="tag tag-num">BWG</span></td></tr>
+          <tr><td>Average daily gain</td><td>Ganho médio diário</td><td><span class="tag tag-num">ADG</span></td></tr>
+          <tr><td>Dry matter intake</td><td>Consumo de matéria seca</td><td><span class="tag tag-num">DMI</span></td></tr>
+          <tr><td>Feed conversion ratio</td><td>Conversão alimentar</td><td><span class="tag tag-num">FCR</span></td></tr>
+          <tr><td>Egg production / output</td><td>Produção de ovos</td><td><span class="tag tag-num">EO</span></td></tr>
+          <tr><td>Egg mass</td><td>Massa dos ovos</td><td><span class="tag tag-num">EM</span></td></tr>
+          <tr><td>Egg weight</td><td>Peso do ovo</td><td><span class="tag tag-num">EW</span></td></tr>
         </tbody>
       </table>
     </div>
-    <p style="font-size:0.8rem;color:var(--mid);margin-top:10px;">
-      ⚠️ Parcela perdida (TR=2, REP=1, EO) preenchida com <strong>NA</strong>.
-      Cada aba do arquivo representa uma categoria de variáveis.
-    </p>
-  </div>
-</div>
+
+    <h3 style="color: var(--rust); margin: 32px 0 12px; font-family: 'Playfair Display', serif;">Egg Quality (Qualidade dos Ovos)</h3>
+    <div class="format-table-wrap">
+      <table>
+        <thead>
+          <tr><th>Termo em Inglês</th><th>Termo em Português</th><th>Sigla Recomendada</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Albumen weight</td><td>Peso do albúmen</td><td><span class="tag tag-num">AW</span></td></tr>
+          <tr><td>Albumen height</td><td>Altura da clara</td><td><span class="tag tag-num">AH</span></td></tr>
+          <tr><td>Shell weight</td><td>Peso da casca</td><td><span class="tag tag-num">SW</span></td></tr>
+          <tr><td>Egg shell</td><td>Casca do ovo</td><td><span class="tag tag-num">ES</span></td></tr>
+          <tr><td>Shell thickness</td><td>Espessura da casca</td><td><span class="tag tag-num">ST</span></td></tr>
+          <tr><td>Yolk weight</td><td>Peso da gema</td><td><span class="tag tag-num">YW</span></td></tr>
+          <tr><td>Yolk color</td><td>Cor da gema</td><td><span class="tag tag-num">YC</span></td></tr>
+          <tr><td>Haugh Unit</td><td>Unidade Haugh</td><td><span class="tag tag-num">HU</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="color: var(--rust); margin: 32px 0 12px; font-family: 'Playfair Display', serif;">Blood Variables (Variáveis Sanguíneas)</h3>
+    <div class="format-table-wrap">
+      <table>
+        <thead>
+          <tr><th>Termo em Inglês</th><th>Termo em Português</th><th>Sigla Recomendada</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Red Blood Cells</td><td>Glóbulos vermelhos</td><td><span class="tag tag-num">RBC</span></td></tr>
+          <tr><td>Complete Blood Count</td><td>Contagem de células vermelhas</td><td><span class="tag tag-num">CBC</span></td></tr>
+          <tr><td>Hematocrit</td><td>Hematócrito</td><td><span class="tag tag-num">HTC</span></td></tr>
+          <tr><td>Mean Corpuscular Volume</td><td>Volume corpuscular médio</td><td><span class="tag tag-num">MCV</span></td></tr>
+          <tr><td>Mean Corpuscular Hemoglobin</td><td>Hemoglobina corpuscular média</td><td><span class="tag tag-num">MCH</span></td></tr>
+          <tr><td>Total Proteins</td><td>Proteínas totais</td><td><span class="tag tag-num">TP</span></td></tr>
+          <tr><td>Total Leukocytes</td><td>Leucócitos totais</td><td><span class="tag tag-num">WBC</span></td></tr>
+          <tr><td>Heterophils</td><td>Heterófilos</td><td><span class="tag tag-num">HET</span></td></tr>
+          <tr><td>Lymphocytes</td><td>Linfócitos</td><td><span class="tag tag-num">LYM</span></td></tr>
+          <tr><td>Monocytes</td><td>Monócitos</td><td><span class="tag tag-num">MON</span></td></tr>
+          <tr><td>Eosinophils</td><td>Eosinófilos</td><td><span class="tag tag-num">EOS</span></td></tr>
+          <tr><td>Basophils</td><td>Basófilos</td><td><span class="tag tag-num">BAS</span></td></tr>
+          <tr><td>Total Platelets</td><td>Plaquetas totais</td><td><span class="tag tag-num">PLT</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="color: var(--rust); margin: 32px 0 12px; font-family: 'Playfair Display', serif;">Metabolism (Metabolismo e Nutrição)</h3>
+    <div class="format-table-wrap">
+      <table>
+        <thead>
+          <tr><th>Termo em Inglês</th><th>Termo em Português</th><th>Sigla Recomendada</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Crude protein</td><td>Proteína bruta</td><td><span class="tag tag-num">CP</span></td></tr>
+          <tr><td>Metabolizable energy</td><td>Energia metabolizável</td><td><span class="tag tag-num">ME</span></td></tr>
+          <tr><td>Amino acids</td><td>Aminoácidos</td><td><span class="tag tag-num">AA</span></td></tr>
+          <tr><td>Ether extract</td><td>Extrato etéreo</td><td><span class="tag tag-num">EE</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="color: var(--rust); margin: 32px 0 12px; font-family: 'Playfair Display', serif;">Bone Quality (Qualidade Óssea)</h3>
+    <div class="format-table-wrap">
+      <table>
+        <thead>
+          <tr><th>Termo em Inglês</th><th>Termo em Português</th><th>Sigla Recomendada</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Proximal Density</td><td>Densidade proximal</td><td><span class="tag tag-num">PD</span></td></tr>
+          <tr><td>Medial Density</td><td>Densidade medial</td><td><span class="tag tag-num">MD</span></td></tr>
+          <tr><td>Distal Density</td><td>Densidade distal</td><td><span class="tag tag-num">DD</span></td></tr>
+          <tr><td>Tibia Length</td><td>Comprimento da tíbia</td><td><span class="tag tag-num">TL</span></td></tr>
+          <tr><td>Tibia Weight</td><td>Peso da tíbia</td><td><span class="tag tag-num">TW</span></td></tr>
+          <tr><td>Mineral Matter</td><td>Matéria mineral</td><td><span class="tag tag-num">MM</span></td></tr>
+          <tr><td>Seedor Index</td><td>Índice de Seedor</td><td><span class="tag tag-num">SI</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="color: var(--rust); margin: 32px 0 12px; font-family: 'Playfair Display', serif;">Immunology & Health (Imunologia)</h3>
+    <div class="format-table-wrap">
+      <table>
+        <thead>
+          <tr><th>Termo em Inglês</th><th>Termo em Português</th><th>Sigla Recomendada</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Lipopolysaccharide</td><td>Lipopolissacarídeo</td><td><span class="tag tag-num">LPS</span></td></tr>
+          <tr><td>Immunoglobulin</td><td>Imunoglobulina</td><td><span class="tag tag-num">Ig</span></td></tr>
+          <tr><td>Interferon-gamma</td><td>Interferon-gama</td><td><span class="tag tag-num">IFN-γ</span></td></tr>
+          <tr><td>Interleukin</td><td>Interleucina</td><td><span class="tag tag-num">IL</span></td></tr>
+          <tr><td>Nitric oxide</td><td>Óxido nítrico</td><td><span class="tag tag-num">NO</span></td></tr>
+          <tr><td>Reactive oxygen species</td><td>Espécies reativas de oxigênio</td><td><span class="tag tag-num">ROS</span></td></tr>
+          <tr><td>Toll-like receptor</td><td>Receptor do tipo Toll</td><td><span class="tag tag-num">TLR</span></td></tr>
+          <tr><td>Tumor necrosis factor-alpha</td><td>Fator de necrose tumoral alfa</td><td><span class="tag tag-num">TNF-α</span></td></tr>
+          <tr><td>Salmonella species</td><td>Espécies de Salmonella</td><td><span class="tag tag-num">Salmonella spp.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div></div>
