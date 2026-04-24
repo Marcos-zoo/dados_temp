@@ -2,21 +2,7 @@
 import { setupDropzone } from './dados.js';
 import { renderDescriptive } from './statistics.js';
 import { renderCharts } from './charts.js';
-
-// ── NOVA FUNÇÃO DE CARREGAMENTO DE VIEWS ──
-async function loadView(elementId, filePath) {
-  try {
-    const response = await fetch(filePath);
-    if (response.ok) {
-      const html = await response.text();
-      document.getElementById(elementId).innerHTML = html;
-    } else {
-      console.error("Erro ao carregar o arquivo:", filePath);
-    }
-  } catch (error) {
-    console.error("Erro de rede ao tentar carregar a view:", error);
-  }
-}
+import { generateFullPDF } from './report.js'; // O PDF é importado aqui!
 
 function switchTab(tabId, btnEl) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
@@ -36,11 +22,8 @@ function switchTab(tabId, btnEl) {
 
 document.addEventListener('DOMContentLoaded', () => {
     setupDropzone();
-    
-    // Assim que a página abre, ele vai buscar o arquivo silenciosamente no fundo
-    loadView('tab-instructions', 'assets/views/instrucoes.html');
 });
 
 window.switchTab = switchTab;
 
-console.log("App carregado. Sistema de Views ativado.");
+console.log("App carregado. Todos os botões e PDF estão online!");
